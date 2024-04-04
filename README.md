@@ -3,7 +3,7 @@
 ## Description
 
 ### Purpose
-This Java application is intended to help the user manage their time by keeping track of what they have to and reminds them of when they have to get it done.
+This Java application is intended to help the user manage their time by keeping track of what they have to and reminds them of when they have to get it done. It allows them to have a timeline of the tasks that they need to get and helps them plan ahead of when they should do it.
 
 ### Theme
 The app will also have a fantasy-themed so that it can be more visually appealing.
