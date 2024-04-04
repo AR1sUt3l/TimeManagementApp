@@ -3,11 +3,20 @@
 ## Description
 
 ### Purpose
-This Java application is intended to help the user manage their time.
+This Java application is intended to help the user manage their time by keeping track of what they have to and reminds them of when they have to get it done.
+
+### Theme
+The app will also have a fantasy-themed so that it can be more visually appealing.
 
 ### Main Components
 The application has 3 main parts
 * To-do List or Calendar
+  * Helps users to keep track of what they have to do and when they have to complete the task
+  * Helps organize which are the more urgent tasks that they have to complete
+  
 * Pomodoro Timer
+  * Helps maintain their focus on their task in a short period of time
+  * Helps them take breaks in between to sustain their focus
+  
 * Mini Motivational activity or game
-
+  * To encourage the use of the application
