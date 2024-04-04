@@ -8,7 +8,7 @@ This **Java** application is intended to help the user *manage their time* by ke
 ### Theme
 The app will also have a fantasy-themed so that it can be more visually appealing.
 
-### Main Components
+### Requirements
 The application has 3 main parts:
 * To-do List or Calendar
   * Helps users to keep track of what they have to do and when they have to complete the task
