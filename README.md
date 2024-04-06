@@ -29,3 +29,4 @@ The application has 3 main parts:
   - will refresh every month but keep record of the badges earned in the previous months
 
 ## CRC Cards and UML Diagram
+![CRC Cards]images/UML Diagram.jpg
