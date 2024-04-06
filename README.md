@@ -3,7 +3,7 @@
 ## Description
 
 ### Purpose
-This Java application is intended to help users manage their time. 
+This Java application is intended to help users manage their time. In our current society, which is fast-paced, it is hard for some people to be able to get things done in time due to time constraints and most of the time, procastination. Therefore, I would like to design an app that can help keep track of what tasks they have to do and when they have to get it done. I also plan to add a Pomodoro Timer as it instills a sense of urgency, by allowing the user to set a time in which they will complete a certain task or tasks, and take short breaks in between, ensuring that they do not overwork themselves and will be able to sustain their concentration. In addition, an extra activity that I plan to do but am uncertain whether I am able to get it done is a badge reward system that can motivate the users to use the app. I hope that through the use of the app, people are able to delegate their time more efficiently.
 
 ### Features
 The application has 3 main parts:
@@ -28,3 +28,5 @@ The application has 3 main parts:
 * Design a reward or achievement system that:
  * has a awards badges based on how many tasks you completed and how long the user has used the pomodoro timer
  * will refresh every month but keep record of the badges earned in the previous months
+
+
