@@ -8,8 +8,8 @@ This Java application is intended to help users manage their time. In our curren
 ### Features
 The application has 3 main parts:
 * To-do List or Calendar
-** Helps users to keep track of what they have to do and when they have to complete the task
-** Helps organize which are the more urgent tasks that they have to complete
+  - Helps users to keep track of what they have to do and when they have to complete the task
+  - Helps organize which are the more urgent tasks that they have to complete
   
 * Pomodoro Timer
 ** Helps maintain their focus on their task in a short period of time
