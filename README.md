@@ -29,4 +29,4 @@ The application has 3 main parts:
   - will refresh every month but keep record of the badges earned in the previous months
 
 ## CRC Cards and UML Diagram
-![CRC Cards](images/UML Diagram.jpg)
+![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/UML%20Diagram.jpg)
