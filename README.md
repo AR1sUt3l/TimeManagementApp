@@ -31,3 +31,7 @@ The application has 3 main parts:
 ## CRC Cards and UML Diagram (may be subjected to changes)
 ![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/CRC%20Cards.jpg)
 ![UML Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/UML%20Diagram.jpg)
+
+## Weekly Updates
+### Week 1
+### Week 2
