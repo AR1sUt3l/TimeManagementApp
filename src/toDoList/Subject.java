@@ -8,7 +8,7 @@ public class Subject
 	private static ArrayList<String> _listOfSubjects = new ArrayList<>();
 	private String _subject;
 	
-	private static void defaultList()
+	private static void defaultList() // to be updated
 	{
 		_listOfSubjects.add("General");
 		_listOfSubjects.add("English");
