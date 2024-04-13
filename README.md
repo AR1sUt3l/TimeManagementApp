@@ -28,6 +28,14 @@ The application has 3 main parts:
   - has a awards badges based on how many tasks you completed and how long the user has used the pomodoro timer
   - will refresh every month but keep record of the badges earned in the previous months
 
-## CRC Cards and UML Diagram (may be subjected to changes)
+## CRC Cards and Class Diagram (may be subjected to changes)
 ![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/CRC%20Cards.jpg)
-![UML Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/UML%20Diagram.jpg)
+![Class Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/UML%20Diagram.jpg)
+
+## Weekly Updates
+### Week 1
+* Thought of what I wanted to do for my final project
+* Worked on README
+  - Added the Introduction
+* Made the rough draft of the CRC cards and Class Diagrams
+### Week 2
