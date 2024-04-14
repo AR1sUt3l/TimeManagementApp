@@ -3,9 +3,9 @@ package toDoList;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Subject
+public class Type
 {
-	private static ArrayList<String> _listOfSubjects = new ArrayList<>();
+	private static ArrayList<String> _listOfTypes = new ArrayList<>();
 	private String _subject;
 	
 	private static void defaultList() // to be updated
