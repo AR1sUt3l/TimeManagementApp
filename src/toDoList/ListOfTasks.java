@@ -1,6 +1,6 @@
 package toDoList;
 
-public class ListOfTasks
+public class ListOfTasks implements SortByAlphabet, SortByDeadline, SortByType
 {
-
+	
 }
