@@ -6,55 +6,54 @@ import java.util.Collections;
 public class Type
 {
 	private static ArrayList<String> _listOfTypes = new ArrayList<>();
-	private String _subject;
+	private String _type;
 	
 	private static void defaultList() // to be updated
 	{
-		_listOfSubjects.add("General");
-		_listOfSubjects.add("English");
-		_listOfSubjects.add("Mathematics");
-		_listOfSubjects.add("Science");
-		_listOfSubjects.add("Language");
-		_listOfSubjects.add("Humanities");
-		_listOfSubjects.add("Economics");
-		_listOfSubjects.add("History");
-		_listOfSubjects.add("Communication");
-		_listOfSubjects.add("Other");
-		Collections.sort(_listOfSubjects);
+		_listOfTypes.add("General");
+		_listOfTypes.add("English");
+		_listOfTypes.add("Mathematics");
+		_listOfTypes.add("Science");
+		_listOfTypes.add("Language");
+		_listOfTypes.add("Humanities");
+		_listOfTypes.add("Economics");
+		_listOfTypes.add("History");
+		_listOfTypes.add("Communication");
+		Collections.sort(_listOfTypes);
 	}
 	
-	public Subject()
+	public Type()
 	{
-		_subject = _listOfSubjects.get(0);
+		_type = _listOfTypes.get(0);
 	}
 	
-	public Subject(String subject)
+	public Type(String type)
 	{
-		_subject = subject;
-		addNewSubject(subject);
+		_type = type;
+		addNewSubject(type);
 	}
 	
 	public String getSubject()
 	{
-		return _subject;
+		return _type;
 	}
 	
-	public void setSubject(String subject)
+	public void setSubject(String type)
 	{
-		_subject = subject;
+		_type = type;
 	}
 	
-	public void addNewSubject(String subject)
+	public void addNewSubject(String type)
 	{
-		subject.toLowerCase();
-		subject.substring(0, 0).toUpperCase();
-		for (int i = 0; i < _listOfSubjects.size(); i++)
+		type.toLowerCase();
+		type.substring(0, 0).toUpperCase();
+		for (int i = 0; i < _listOfTypes.size(); i++)
 		{
-			if(subject != _listOfSubjects.get(i))
+			if(type != _listOfTypes.get(i))
 			{
-				_listOfSubjects.add(subject);
+				_listOfTypes.add(type);
 			}
 		}
-		Collections.sort(_listOfSubjects);
+		Collections.sort(_listOfTypes);
 	}
 }
