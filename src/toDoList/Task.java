@@ -11,7 +11,6 @@ public class Task
 	public Task(String name)
 	{
 		_name = name;
-		
 	}
 	
 	public Task(String name, Type taskType)
@@ -32,4 +31,35 @@ public class Task
 		_taskType = taskType;
 		_deadline = deadline;
 	}
+	
+	public String getName()
+	{
+		return _name;
+	}
+	
+	public Type getTaskType()
+	{
+		return _taskType;
+	}
+	
+	public Time getDeadline()
+	{
+		return _deadline;
+	}
+	
+	public void setName(String newName)
+	{
+		_name = newName;
+	}
+	
+	public void setTaskType(Type newTaskType)
+	{
+		_taskType = newTaskType;
+	}
+	
+	public void setDeadline(Time newDeadline)
+	{
+		_deadline = newDeadline;
+	}
+	
 }
