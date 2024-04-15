@@ -39,5 +39,6 @@ The application has 3 main parts:
   - Added the Introduction
 * Made the rough draft of the CRC cards and Class Diagrams
 ### Week 2
-* Finished some of the classes: Task, Subject, ...
-* Added some unit tests for each class
+* Worked on some of the classes: Task, Type
+* Added some interfaces
+* Added a few unit tests for Type class
