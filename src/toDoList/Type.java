@@ -22,20 +22,20 @@ public class Type implements SortByAlphabet
 	public Type(String type)
 	{
 		_type = type;
-		addNewSubject(type);
+		addNewType(type);
 	}
 	
-	public String getSubject()
+	public String getType()
 	{
 		return _type;
 	}
 	
-	public void setSubject(String type)
+	public void setType(String type)
 	{
 		_type = type;
 	}
 	
-	public void addNewSubject(String type)
+	public void addNewType(String type)
 	{
 		type.toLowerCase();
 		type.substring(0, 0).toUpperCase();
