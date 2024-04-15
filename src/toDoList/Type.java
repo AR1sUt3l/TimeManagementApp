@@ -3,28 +3,20 @@ package toDoList;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Type
+public class Type implements SortByAlphabet
 {
 	private static ArrayList<String> _listOfTypes = new ArrayList<>();
 	private String _type;
 	
-	private static void defaultList() // to be updated
+	private static String[] _list = new String[]
 	{
-		_listOfTypes.add("General");
-		_listOfTypes.add("English");
-		_listOfTypes.add("Mathematics");
-		_listOfTypes.add("Science");
-		_listOfTypes.add("Language");
-		_listOfTypes.add("Humanities");
-		_listOfTypes.add("Economics");
-		_listOfTypes.add("History");
-		_listOfTypes.add("Communication");
-		Collections.sort(_listOfTypes);
-	}
+		"English", "Mathematics", "Science", "Language", "Humanities", "Economics",
+		"History", "Communication"
+	};
 	
 	public Type()
 	{
-		_type = _listOfTypes.get(0);
+		_type = "General";
 	}
 	
 	public Type(String type)
@@ -54,6 +46,20 @@ public class Type
 				_listOfTypes.add(type);
 			}
 		}
-		Collections.sort(_listOfTypes);
+	}
+
+	@Override
+	public void sortAlphabetically()
+	{
+		for(int i = 0; i < _listOfTypes.size(); i++)
+		{
+			for(int j = 0; j < _listOfTypes.get(i).length(); j++)
+			{
+				if(_listOfTypes.get(i).charAt(j) < _listOfTypes.get(i).charAt(j))
+				{
+					Collections.swap(_listOfTypes, i, i + 1);
+				}
+			}
+		}
 	}
 }
