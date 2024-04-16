@@ -17,5 +17,12 @@ class TestToDoList
 		subject2.setType("Math 150");
 		assertEquals("Math 150", subject2.getType());
 	}
+	
+	@Test
+	void testTask()
+	{
+		Task task1 = new Task("EL Homework");
+		assertEquals("EL Homework", task1.getName());
+	}
 
 }
