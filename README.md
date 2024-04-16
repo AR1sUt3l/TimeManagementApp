@@ -42,3 +42,4 @@ The application has 3 main parts:
 * Worked on some of the classes: Task, Type
 * Added some interfaces
 * Added a few unit tests for Type class
+### Week 3
