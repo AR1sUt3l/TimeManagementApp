@@ -17,6 +17,7 @@ The application has 3 main parts:
   
 * Reward or achievement system (Badges)
   - To encourage the use of the application
+  - Users will be rewarded certain badges based on how many tasks they have completed and how long they have used the pomodoro timer every month
 
 ### Objectives
 * Design an intro screen that contains the tasks that they have input into the app
