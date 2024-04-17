@@ -8,12 +8,6 @@ public class Type implements SortByAlphabet
 	private static ArrayList<String> _listOfTypes = new ArrayList<>();
 	private String _type;
 	
-	private static String[] _list = new String[]
-	{
-		"English", "Mathematics", "Science", "Language", "Humanities", "Economics",
-		"History", "Communication"
-	};
-	
 	public Type()
 	{
 		_type = "General";
