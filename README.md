@@ -15,7 +15,7 @@ The application has 3 main parts:
   - Helps maintain their focus on their task in a short period of time
   - Helps them take breaks in between to sustain their focus
   
-* Reward or achievement system
+* Reward or achievement system (Badges)
   - To encourage the use of the application
 
 ### Objectives
