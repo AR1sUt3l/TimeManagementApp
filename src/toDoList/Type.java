@@ -101,13 +101,17 @@ public class Type implements SortByAlphabet
 	@Override
 	public void sortAlphabetically()
 	{
-		for(int i = 1; i < _listOfTypes.size() - 1; i++)
-		{
-			if(_listOfTypes.get(i).charAt(0) > _listOfTypes.get(i + 1).charAt(0))
-			{
-				Collections.swap(_listOfTypes, i, i + 1);
-			}
-		}
+//		String[] list = new String[_listOfTypes.size()];
+//		list[0] = _listOfTypes.get(0);
+		_listOfTypes.remove(0);
+//		for(int i = 1; i < _listOfTypes.size() - 1; i++)
+//		{
+//			if(_listOfTypes.get(i).charAt(0) > _listOfTypes.get(i + 1).charAt(0))
+//			{
+//				Collections.swap(_listOfTypes, i, i + 1);
+//			}
+//		}
+		Collections.sort(_listOfTypes);
+		_listOfTypes.add(0, DEFAULT_TYPE);
 	}
-//		Collections.sort(_listOfTypes);
 }
