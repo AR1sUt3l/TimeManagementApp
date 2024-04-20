@@ -2,5 +2,5 @@ package toDoList;
 
 public interface SortByAlphabet
 {
-	public void sortAlphabetically();
+	public String[] sortAlphabetically();
 }
