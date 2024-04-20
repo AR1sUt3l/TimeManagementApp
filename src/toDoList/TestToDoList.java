@@ -18,7 +18,6 @@ class TestToDoList
 		assertEquals("General, English", subject2.toString());
 		assertEquals("General, English", subject1.toString());
 		subject2.setType("Math 150");
-//		Type subject4 = new Type("Math 151");
 		assertEquals("Math 150", subject2.getType());
 		assertEquals("General, English, Math 150", subject2.toString());
 		assertEquals("General, English, Math 150", subject1.toString());
