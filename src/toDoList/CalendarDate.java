@@ -1,11 +1,26 @@
 package toDoList;
 
+import java.sql.Time;
+
 public class CalendarDate
 {
+	private Time _time = new Time(0);
 	private String _day;
-	private String _date;
-	private String _month;
-	private String _year;
+	private int _date;
+	private Month _month;
+	private int _year;
 	
+	public CalendarDate(int date, int month, int year)
+	{
+		_date = date;
+		_month = determineMonth(month);
+		_year = year;
+	}
+
+	private Month determineMonth(int month)
+	{
+		
+		return null;
+	}
 	
 }
