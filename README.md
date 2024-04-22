@@ -30,8 +30,8 @@ The application has 3 main parts:
   - will refresh every month but keep record of the badges earned in the previous months
 
 ## CRC Cards and Class Diagram (may be subjected to changes)
-![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/CRC%20Cards.jpg)
-![Class Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/UML%20Diagram.jpg)
+![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/CRC%20Cards%20v1.jpg)
+![Class Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/Class%20Diagram%20v1.jpg)
 
 ## WireFrame
 ![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame.png)
