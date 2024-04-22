@@ -33,6 +33,9 @@ The application has 3 main parts:
 ![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/CRC%20Cards.jpg)
 ![Class Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/UML%20Diagram.jpg)
 
+## WireFrame
+![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame.png)
+
 ## Weekly Updates
 ### Week 1
 * Thought of what I wanted to do for my final project
