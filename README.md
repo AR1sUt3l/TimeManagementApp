@@ -49,3 +49,4 @@ The application has 3 main parts:
 ### Week 3
 * Continued working on and refined some of the classes: Type
 * Added a wireframe
+### Week 4
