@@ -48,3 +48,4 @@ The application has 3 main parts:
 * Added a few unit tests for Type class
 ### Week 3
 * Continued working on and refined some of the classes: Type
+* Added a wireframe
