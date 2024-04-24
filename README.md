@@ -34,7 +34,7 @@ The application has 3 main parts:
 ![Class Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/Class%20Diagram%20v1.jpg)
 
 ## WireFrame
-![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame.png)
+![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame%20v1.png)
 
 ## Weekly Updates
 ### Week 1
