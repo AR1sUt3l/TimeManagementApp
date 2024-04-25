@@ -19,7 +19,7 @@ The application has 3 main parts:
   - To encourage the use of the application
   - Users will be rewarded certain badges based on how many tasks they have completed and how long they have used the pomodoro timer every month
 
-### Objectives
+### Requirements
 * Design an intro screen that contains the tasks that they have input into the app
 * Design a To-do list that:
   - will allow users to add a new task, its deadline, be able to sort it
