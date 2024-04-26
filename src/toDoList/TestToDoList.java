@@ -29,6 +29,14 @@ class TestToDoList
 	}
 	
 	@Test
+	void testMonth()
+	{
+		Month jan = new Month(1);
+		assertEquals(1, jan.getMonthNumber());
+		assertTrue(jan.isAValidMonthNumber());
+	}
+	
+	@Test
 	void testTask()
 	{
 		Task task1 = new Task("EL Homework");
