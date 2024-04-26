@@ -24,10 +24,10 @@ public class Month
 	
 	public Month(int monthNumber)
 	{
-		while(!isAValidMonthNumber(monthNumber))
-		{
-			
-		}
+//		while(!isAValidMonthNumber(monthNumber))
+//		{
+//			
+//		}
 		_monthNumber = monthNumber;
 	}
 	
