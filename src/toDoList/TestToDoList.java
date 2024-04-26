@@ -33,6 +33,9 @@ class TestToDoList
 	{
 		Task task1 = new Task("EL Homework");
 		assertEquals("EL Homework", task1.getName());
+		task1.setName("English Essay");
+		assertNotEquals("EL Homework", task1.getName());
+		assertEquals("English Essay", task1.getName());
 	}
 
 }
