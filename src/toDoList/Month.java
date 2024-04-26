@@ -41,9 +41,9 @@ public class Month
 		_monthNumber = monthNumber;
 	}
 	
-	public boolean isAValidMonthNumber(int monthNumber)
+	public boolean isAValidMonthNumber()
 	{
-		if(monthNumber > 0 && monthNumber < 13)
+		if(_monthNumber > 0 && _monthNumber < 13)
 		{
 			return true;
 		}
