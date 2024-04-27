@@ -51,3 +51,4 @@ The application has 3 main parts:
 * Continued working on and refined some of the classes: Type
 * Added a wireframe
 ### Week 4
+* Continued working on some classes
