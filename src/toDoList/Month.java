@@ -97,5 +97,9 @@ public class Month
 		}
 	}
 	
+	public MonthName getMonthName()
+	{
+		return _monthName;
+	}
 	
 }
