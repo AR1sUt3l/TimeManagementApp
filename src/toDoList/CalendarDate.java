@@ -17,10 +17,11 @@ public class CalendarDate
 		_year = year;
 	}
 
-	private Month determineMonth(int month)
+	private Month determineMonth(int monthNumber)
 	{
-		
-		return null;
+		_month = new Month(monthNumber);
+		_month.setMonthName();
+		return _month;
 	}
 	
 }
