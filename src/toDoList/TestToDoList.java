@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import toDoList.Month.MonthName;
+
 class TestToDoList
 {
 
@@ -36,6 +38,8 @@ class TestToDoList
 		assertTrue(jan.isAValidMonthNumber());
 		Month noMonth = new Month(14);
 		assertFalse(noMonth.isAValidMonthNumber());
+		noMonth.setMonthName();
+		assertEquals(MonthName.INVALID_MONTH, noMonth.getMonthName());
 	}
 	
 	@Test
