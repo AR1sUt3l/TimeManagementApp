@@ -40,6 +40,10 @@ class TestToDoList
 		assertFalse(noMonth.isAValidMonthNumber());
 		noMonth.setMonthName();
 		assertEquals(MonthName.INVALID_MONTH, noMonth.getMonthName());
+		Month negative = new Month(-100);
+		assertFalse(negative.isAValidMonthNumber());
+		negative.setMonthName();
+		assertEquals(MonthName.INVALID_MONTH, negative.getMonthName());
 	}
 	
 	@Test
