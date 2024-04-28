@@ -52,3 +52,4 @@ The application has 3 main parts:
 * Added a wireframe
 ### Week 4
 * Continued working on some classes
+* Added more tests for the unit test
