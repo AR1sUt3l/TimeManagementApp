@@ -36,6 +36,9 @@ class TestToDoList
 		Month jan = new Month(1);
 		assertEquals(1, jan.getMonthNumber());
 		assertTrue(jan.isAValidMonthNumber());
+		Month dec = new Month(12);
+		dec.setMonthName();
+		assertEquals(MonthName.DECEMBER, dec.getMonthName());
 		Month noMonth = new Month(0);
 		assertFalse(noMonth.isAValidMonthNumber());
 		noMonth.setMonthName();
