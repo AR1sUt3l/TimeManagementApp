@@ -49,6 +49,11 @@ class TestToDoList
 		assertEquals(MonthName.INVALID_MONTH, negative.getMonthName());
 	}
 	
+	void testDueDate()
+	{
+		DueDate test = new DueDate();
+	}
+	
 	@Test
 	void testTask()
 	{
@@ -59,4 +64,5 @@ class TestToDoList
 		assertEquals("English Essay", task1.getName());
 	}
 
+	
 }
