@@ -39,10 +39,10 @@ class TestToDoList
 		Month dec = new Month(12);
 		dec.setMonthName();
 		assertEquals(MonthName.DECEMBER, dec.getMonthName());
-		Month noMonth = new Month(0);
-		assertFalse(noMonth.isAValidMonthNumber());
-		noMonth.setMonthName();
-		assertEquals(MonthName.INVALID_MONTH, noMonth.getMonthName());
+		Month zero = new Month(0);
+		assertFalse(zero.isAValidMonthNumber());
+		zero.setMonthName();
+		assertEquals(MonthName.INVALID_MONTH, zero.getMonthName());
 		Month negative = new Month(-100);
 		assertFalse(negative.isAValidMonthNumber());
 		negative.setMonthName();
