@@ -38,6 +38,11 @@ The application has 3 main parts:
 ![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame%20v1.png)
 
 ## Requirements Traceability Matrix
+| Test ID | Description | Source Files(s) | Test Status |
+|---------|-------------|-----------------|-------------|
+| 1       | 
+|
+|
 
 ## Weekly Updates
 ### Week 1
@@ -55,3 +60,4 @@ The application has 3 main parts:
 ### Week 4
 * Continued working on some classes
 * Added more tests for the unit test
+* Created RTM
