@@ -38,11 +38,11 @@ The application has 3 main parts:
 ![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame%20v1.png)
 
 ## Requirements Traceability Matrix
-| Test ID | Description | Source Files(s) | Test Status |
-|---------|-------------|-----------------|-------------|
-| 1       | 
-|
-|
+| Test ID | Requirements | Source Files(s) | Test Status |
+|---------|--------------|-----------------|-------------|
+| 1       | Allow user to add a new task | Task.java | TBD |
+| 2       | Allow user to determine due date for the task | DueDate.java | TBD |
+| 3       | Allow user to determine a type for the task | Type.java | Pass |
 
 ## Weekly Updates
 ### Week 1
