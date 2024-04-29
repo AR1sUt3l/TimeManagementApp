@@ -37,6 +37,8 @@ The application has 3 main parts:
 ## WireFrame
 ![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame%20v1.png)
 
+## Requirements Traceability Matrix
+
 ## Weekly Updates
 ### Week 1
 * Thought of what I wanted to do for my final project
