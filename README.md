@@ -45,6 +45,7 @@ The application has 3 main parts:
 | 3       | Allow user to determine a type for the task | Type.java | Pass |
 | 4       | Allow user to sort tasks by deadline (default settings) | Task.java | TBD |
 | 4       | Allow user to sort tasks by alphabetic order (name) | Task.java | TBD |
+| 4       | Allow user to sort types by alphabetic order | Task.java | Pass |
 
 ## Weekly Updates
 ### Week 1
