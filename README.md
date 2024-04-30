@@ -39,10 +39,11 @@ The application has 3 main parts:
 
 ## Requirements Traceability Matrix
 | Test ID | Requirements | Source Files(s) | Test Status |
-|---------|--------------|-----------------|-------------|
+|---------|-----------------------------------------------|-----------------|-------------|
 | 1       | Allow user to add a new task | Task.java | TBD |
 | 2       | Allow user to determine due date for the task | DueDate.java | TBD |
 | 3       | Allow user to determine a type for the task | Type.java | Pass |
+| 4       | Allow user to sort tasks by deadline (default settings) | Task.java | TBD |
 
 ## Weekly Updates
 ### Week 1
