@@ -25,10 +25,10 @@ The application has 3 main parts:
   - will allow users to add a new task, its deadline, be able to sort it based on urgency, name, type
   - display tasks based on their date
 * Design a Pomodoro Timer that:
-  - has a timer, default time an option to designate a new task or a task that in the To-do list
+  - has a timer, default time, an option to designate a new task, or a task that in the To-do list
 * Design a reward or achievement system that:
-  - has a awards badges based on how many tasks you completed and how long the user has used the pomodoro timer
-  - will refresh every month but keep record of the badges earned in the previous months
+  - has a awards badges based on how many tasks you completed, and how long the user has used the pomodoro timer
+  - will refresh every month and keep record of the badges earned in the previous months
 
 ## CRC Cards and Class Diagram (may be subjected to changes)
 ![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/CRC%20Cards%20v1.jpg)
