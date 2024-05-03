@@ -65,5 +65,5 @@ The application has 3 main parts:
 * Continued working on some classes
 * Added more tests for the unit test
 * Created RTM
-## Week 5
+### Week 5
 * Continued working on some more of the classes
