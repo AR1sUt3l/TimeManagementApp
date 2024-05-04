@@ -40,6 +40,7 @@ public class ToDoListView extends JFrame
 	{
 		_topText = new JLabel(TEXT_FOR_TODAY);
 		_panel.add(_topText);
+		add(_panel);
 	}
 	
 }
