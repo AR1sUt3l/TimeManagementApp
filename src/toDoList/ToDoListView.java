@@ -43,4 +43,9 @@ public class ToDoListView extends JFrame
 		add(_panel);
 	}
 	
+	public static void main(String[] args)
+	{
+		new ToDoListView();
+	}
+	
 }
