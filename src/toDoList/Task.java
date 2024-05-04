@@ -6,7 +6,7 @@ public class Task
 {
 	private String _name;
 	private Type _taskType;
-	private Time _deadline;
+	private DueDate _deadline;
 	
 	public Task(String name)
 	{
@@ -19,13 +19,13 @@ public class Task
 		_taskType = taskType;
 	}
 	
-	public Task(String name, Time deadline)
+	public Task(String name, DueDate deadline)
 	{
 		_name = name;
 		_deadline = deadline;
 	}
 	
-	public Task(String name, Type taskType, Time deadline)
+	public Task(String name, Type taskType, DueDate deadline)
 	{
 		_name = name;
 		_taskType = taskType;
@@ -42,7 +42,7 @@ public class Task
 		return _taskType;
 	}
 	
-	public Time getDeadline()
+	public DueDate getDeadline()
 	{
 		return _deadline;
 	}
@@ -57,7 +57,7 @@ public class Task
 		_taskType = newTaskType;
 	}
 	
-	public void setDeadline(Time newDeadline)
+	public void setDeadline(DueDate newDeadline)
 	{
 		_deadline = newDeadline;
 	}
