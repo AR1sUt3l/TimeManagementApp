@@ -25,10 +25,10 @@ The application has 3 main parts:
   - will allow users to add a new task, its deadline, be able to sort it based on urgency, name, type
   - display tasks based on their date
 * Design a Pomodoro Timer that:
-  - has a timer, default time an option to designate a new task or a task that in the To-do list
+  - has a timer, default time, an option to designate a new task, or a task that in the To-do list
 * Design a reward or achievement system that:
-  - has a awards badges based on how many tasks you completed and how long the user has used the pomodoro timer
-  - will refresh every month but keep record of the badges earned in the previous months
+  - has a awards badges based on how many tasks you completed, and how long the user has used the pomodoro timer
+  - will refresh every month and keep record of the badges earned in the previous months
 
 ## CRC Cards and Class Diagram (may be subjected to changes)
 ![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/CRC%20Cards%20v1.jpg)
@@ -36,6 +36,17 @@ The application has 3 main parts:
 
 ## WireFrame
 ![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame%20v1.png)
+
+## Requirements Traceability Matrix
+| Test ID | Requirements                                                    | Source Files(s) | Test Status |
+|---------|-----------------------------------------------------------------|-----------------|-------------|
+| 1       | Allow user to add a new task                                    | Task.java       | TBD         |
+| 2       | Allow user to determine due date for the task                   | DueDate.java    | TBD         |
+| 3       | Allow user to determine a type for the task                     | Type.java       | Pass        |
+| 4       | Allow user to sort tasks by deadline (default settings)         | Task.java       | TBD         |
+| 5       | Allow user to sort tasks by alphabetic order (name)             | Task.java       | TBD         |
+| 6       | Sort types list by alphabetic order upon addition of new type   | Type.java       | Pass        |
+| 7       | Delete type from list when no current tasks of that type exists | Type.java       | Pass        |
 
 ## Weekly Updates
 ### Week 1
@@ -53,3 +64,6 @@ The application has 3 main parts:
 ### Week 4
 * Continued working on some classes
 * Added more tests for the unit test
+* Created RTM
+### Week 5
+* Continued working on some more of the classes
