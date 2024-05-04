@@ -67,3 +67,4 @@ The application has 3 main parts:
 * Created RTM
 ### Week 5
 * Continued working on some more of the classes
+* Created a simple GUI
