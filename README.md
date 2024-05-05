@@ -47,6 +47,7 @@ The application has 3 main parts:
 | 5       | Allow user to sort tasks by alphabetic order (name)             | Task.java       | TBD         |
 | 6       | Sort types list by alphabetic order upon addition of new type   | Type.java       | Pass        |
 | 7       | Delete type from list when no current tasks of that type exists | Type.java       | Pass        |
+| 8       | Allow users to be able to not include a deadline and and type for task | Task.java | Pass |
 
 ## Weekly Updates
 ### Week 1
