@@ -31,11 +31,11 @@ The application has 3 main parts:
   - will refresh every month and keep record of the badges earned in the previous months
 
 ## CRC Cards and Class Diagram (may be subjected to changes)
-![CRC Cards](images/CRC Cards/v1.jpg)
-![Class Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/Class%20Diagram%20v1.jpg)
+![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/CRC%20Cards/v1.jpg)
+![Class Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/Class%20Diagrams/v1.jpg)
 
 ## WireFrame
-![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame%20v1.png)
+![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame/v1.png)
 
 ## Requirements Traceability Matrix
 | Test ID | Requirements                                                    | Source Files(s) | Test Status |
