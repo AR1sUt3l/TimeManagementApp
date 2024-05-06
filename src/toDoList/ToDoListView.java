@@ -1,5 +1,6 @@
 package toDoList;
 
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
@@ -9,8 +10,8 @@ import javax.swing.JTextField;
 
 public class ToDoListView extends JFrame
 {
-	private static final int WINDOW_WIDTH = 350;
-	private static final int WINDOW_HEIGHT = 500;
+	private static final int WINDOW_WIDTH = 400;
+	private static final int WINDOW_HEIGHT = 600;
 	private static final String TITLE = "To Do List";
 	private static final String TEXT_FOR_TODAY = "Today";
 //	private static final String SEPARATION_LINE
@@ -33,7 +34,8 @@ public class ToDoListView extends JFrame
 	private void initialFrame()
 	{
 		setTitle(TITLE);
-		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+		setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
+		
 	}
 	
 	private void initialUI()
