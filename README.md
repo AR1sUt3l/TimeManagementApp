@@ -69,3 +69,4 @@ The application has 3 main parts:
 ### Week 5
 * Continued working on some more of the classes
 * Created a simple GUI
+### Week 6
