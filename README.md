@@ -22,8 +22,9 @@ The application has 3 main parts:
 ### Requirements
 * Design an intro screen that contains the tasks that they have input into the app
 * Design a To-do list that:
-  - will allow users to add a new task, its deadline, be able to sort it based on urgency, name, type
-  - display tasks based on their date
+  - will allow users to add a new task, its deadline, type
+  - be able to sort it based on time, name (alphabetic order), type
+  - display tasks based on their date as default
 * Design a Pomodoro Timer that:
   - has a timer, default time, an option to designate a new task, or a task that in the To-do list
 * Design a reward or achievement system that:
