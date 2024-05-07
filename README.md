@@ -15,7 +15,7 @@ The application has 3 main parts:
   - Helps maintain their focus on their task in a short period of time
   - Helps them take breaks in between to sustain their focus
   
-* Reward or achievement system (Badges)
+* Reward system or achievement (Badges)
   - To encourage the use of the application
   - Users will be rewarded certain badges based on how many tasks they have completed and how long they have used the pomodoro timer every month
 
