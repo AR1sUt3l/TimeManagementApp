@@ -71,3 +71,4 @@ The application has 3 main parts:
 * Continued working on some more of the classes
 * Created a simple GUI
 ### Week 6
+* Continued working on the GUI
