@@ -2,6 +2,7 @@ package toDoList;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
@@ -13,7 +14,9 @@ import javax.swing.JPanel;
 public class TaskPanel extends JPanel
 {
 	private JPanel textPanel = new JPanel();
+	private JPanel rightPanel = new JPanel();
 	private JPanel checkBoxPanel = new JPanel();
+	private JPanel emptyPanel = new JPanel();
 	private JCheckBox taskCheckBox;
 	private JLabel name;
 	private JLabel deadline;
@@ -24,9 +27,9 @@ public class TaskPanel extends JPanel
 		setLayout(new GridLayout(1, 2));
 		setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		setLabels();
-		setCheckBox();
+		setRightPanel();
 		add(textPanel);
-		add(checkBoxPanel);
+		add(rightPanel);
 	}
 	
 	public void setLabels()
@@ -38,12 +41,22 @@ public class TaskPanel extends JPanel
 		textPanel.add(deadline);
 	}
 	
+	public void setRightPanel()
+	{
+		rightPanel.setLayout(new GridLayout(3, 1));
+//		rightPanel.add(emptyPanel);
+		setCheckBox();
+		rightPanel.add(checkBoxPanel);
+		rightPanel.add(checkBoxPanel);
+		rightPanel.add(checkBoxPanel);
+//		rightPanel.add(emptyPanel);
+	}
+	
 	public void setCheckBox()
 	{
+		checkBoxPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		taskCheckBox = new JCheckBox();
 		checkBoxPanel.add(taskCheckBox);
-		checkBoxPanel.setAlignmentX(RIGHT_ALIGNMENT);
-//		checkBoxPanel.setAlignmentY(CENTER_ALIGNMENT);
 	}
 	
 	public static void main(String[] args)
