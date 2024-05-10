@@ -26,7 +26,7 @@ The application has 3 main parts:
   - be able to sort it based on time, name (alphabetic order), type
   - display tasks based on their date as default
 * Design a Pomodoro Timer that:
-  - has a timer, default time, an option to designate a new task, or a task that in the To-do list
+  - has a timer, default time, an option to create a new task, or add an existing task
 * Design a reward or achievement system that:
   - has a awards badges based on how many tasks you completed, and how long the user has used the pomodoro timer
   - will refresh every month and keep record of the badges earned in the previous months
