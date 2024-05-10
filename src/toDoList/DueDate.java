@@ -5,8 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class DueDate
 {
-	private DateTimeFormatter monthDayYear = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-//	private DateTimeFormatter monthDayYear = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+//	private DateTimeFormatter monthDayYear = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+	private DateTimeFormatter monthDayYear = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 	private LocalDateTime _currentDate = LocalDateTime.now();
 	
 	public DueDate()
@@ -17,5 +17,12 @@ public class DueDate
 	public String toString()
 	{
 		return monthDayYear.format(_currentDate);
+	}
+	
+	public static void main(String[] args)
+	{
+		DueDate date = new DueDate();
+		
+		System.out.println(date.toString());
 	}
 }
