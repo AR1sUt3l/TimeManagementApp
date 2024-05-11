@@ -4,8 +4,8 @@ import java.util.LinkedList;
 
 public class ListOfTasks implements SortByAlphabet, SortByDeadline, SortByType
 {
-	private LinkedList<Task> _defaultList = new LinkedList<>();
-	private LinkedList<Task> _tempList = new LinkedList<>();
+	private static LinkedList<Task> _defaultList = new LinkedList<>();
+	private static LinkedList<Task> _tempList = new LinkedList<>();
 	
 	public void addTask(Task task)
 	{
