@@ -8,7 +8,6 @@ public class Task
 	private String _name;
 	private Type _taskType;
 	private DueDate _deadline;
-	private ListOfTasks _list = new ListOfTasks();
 	
 	public Task(String name)
 	{
