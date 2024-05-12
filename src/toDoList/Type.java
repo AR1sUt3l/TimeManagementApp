@@ -3,11 +3,11 @@ package toDoList;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Type implements SortByAlphabet
+public class Type
 {
-	private static ArrayList<String> _listOfTypes = new ArrayList<>();
+	private static ListOfTypes _listOfTypes = new ListOfTypes();
 	private String _type;
-	private static final String DEFAULT_TYPE = "General";
+	protected static final String DEFAULT_TYPE = "General";
 	
 	public Type()
 	{
@@ -81,37 +81,5 @@ public class Type implements SortByAlphabet
 		}
 	}
 	
-	public String toString()
-	{
-		if(_listOfTypes.isEmpty())
-		{
-			return null;
-		}
-		String str = _listOfTypes.get(0);
-		if(_listOfTypes.size() > 1)
-		{
-			for (int i = 1; i < _listOfTypes.size(); i++)
-			{
-				str += ", " + _listOfTypes.get(i);
-			}
-		}
-		return str;
-	}
-
-	@Override
-	public void sortAlphabetically()
-	{
-//		String[] list = new String[_listOfTypes.size()];
-//		list[0] = _listOfTypes.get(0);
-		_listOfTypes.remove(0);
-//		for(int i = 1; i < _listOfTypes.size() - 1; i++)
-//		{
-//			if(_listOfTypes.get(i).charAt(0) > _listOfTypes.get(i + 1).charAt(0))
-//			{
-//				Collections.swap(_listOfTypes, i, i + 1);
-//			}
-//		}
-		Collections.sort(_listOfTypes);
-		_listOfTypes.add(0, DEFAULT_TYPE);
-	}
+	
 }
