@@ -32,7 +32,7 @@ public class Type
 	{
 		if (_type != DEFAULT_TYPE)
 		{
-			_listOfTypes.remove(_type);
+			_listOfTypes.removeType(_type);
 		}
 		_type = type;
 		addNewType(type);
@@ -54,29 +54,29 @@ public class Type
 	public void addNewType(String type)
 	{
 		boolean isInList = false;
-		if(_listOfTypes.isEmpty())
+		if(_listOfTypes.getList().isEmpty())
 		{
-			_listOfTypes.add(type);
+			_listOfTypes.getList().add(type);
 		}
-		else if(_listOfTypes.size() == 1)
+		else if(_listOfTypes.getList().size() == 1)
 		{
-			if(_listOfTypes.get(0) != type)
+			if(_listOfTypes.getList().get(0) != type)
 			{
-				_listOfTypes.add(type);
+				_listOfTypes.getList().add(type);
 			}
 		}
 		else
 		{
-			for (int i = 0; i < _listOfTypes.size(); i++)
+			for (int i = 0; i < _listOfTypes.getList().size(); i++)
 			{
-				if(type == _listOfTypes.get(i))
+				if(type == _listOfTypes.getList().get(i))
 				{
 					isInList = true;
 				}
 			}
 			if(isInList == false)
 			{
-				_listOfTypes.add(type);
+				_listOfTypes.getList().add(type);
 			}
 		}
 	}
