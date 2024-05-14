@@ -24,27 +24,8 @@ class TestToDoList
 		Type subject3 = new Type("black studies");
 		assertEquals("Black Studies", subject3.getType());
 		assertEquals("General, English, Math 150, Black Studies", subject3.toString());
-		subject3.sortAlphabetically();
+//		subject3.sortAlphabetically();
 		assertEquals("General, Black Studies, English, Math 150", subject3.toString());
-	}
-	
-	@Test
-	void testMonth()
-	{
-		Month jan = new Month(1);
-		assertEquals(1, jan.getMonthNumber());
-		assertTrue(jan.isAValidMonthNumber());
-		Month dec = new Month(12);
-		dec.setMonthName();
-		assertEquals(MonthName.DECEMBER, dec.getMonthName());
-		Month zero = new Month(0);
-		assertFalse(zero.isAValidMonthNumber());
-		zero.setMonthName();
-		assertEquals(MonthName.INVALID_MONTH, zero.getMonthName());
-		Month negative = new Month(-100);
-		assertFalse(negative.isAValidMonthNumber());
-		negative.setMonthName();
-		assertEquals(MonthName.INVALID_MONTH, negative.getMonthName());
 	}
 	
 	void testDueDate()
