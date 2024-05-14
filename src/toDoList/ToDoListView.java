@@ -13,22 +13,22 @@ import javax.swing.JTextField;
 
 public class ToDoListView extends JFrame
 {
-	private static final int WINDOW_WIDTH = 350;
-	private static final int WINDOW_HEIGHT = 500;
+	private static final int WINDOW_WIDTH = 400;
+	private static final int WINDOW_HEIGHT = 550;
 	private static final String TITLE = "To Do List";
 	private static final String TEXT_FOR_TODAY = "Today";
 //	private static final String SEPARATION_LINE
 	
 	private JPanel mainPanel = new JPanel();
 	private JPanel todayPanel = new JPanel();
-	private TaskPanel taskPanel = new TaskPanel();
+//	private TaskPanel taskPanel = new TaskPanel();
 	private JPanel datePanel = new JPanel();
 	private JPanel buttonPanel = new JPanel();
 	private JPanel bottomPanel = new JPanel();
 	
 	private JLabel topText;
 	private JLabel lineBreak;
-	private JButton addTaskButton;
+	private JButton taskButton;
 	private JButton toDoListButton;
 	private JButton homeButton;
 	private JButton timerButton;
@@ -54,6 +54,8 @@ public class ToDoListView extends JFrame
 		mainPanel.setLayout(new FlowLayout());
 		addTodayText();
 		addTaskSection();
+		addTaskSection();
+//		addDateSection();
 		addTaskButton();
 		addBottomSection();
 		add(mainPanel);
@@ -62,25 +64,25 @@ public class ToDoListView extends JFrame
 	private void addTodayText()
 	{
 		topText = new JLabel(TEXT_FOR_TODAY);
-//		taskPanel.setAlignmentX(LEFT_ALIGNMENT);
-//		taskText = new JLabel("Name of Task" + "\n" + "Deadline");
-//		taskBox = new JCheckBox();
 		todayPanel.add(topText);
-//		taskPanel.add(taskText);
-//		taskPanel.add(taskBox);
 		mainPanel.add(todayPanel);
 	}
 	
 	private void addTaskSection()
 	{
-		add(taskPanel);
+		mainPanel.add(new TaskPanel());
+	}
+	
+	private void addDateSection()
+	{
+		mainPanel.add(new Line());
 	}
 	
 	private void addTaskButton()
 	{
-		addTaskButton = new JButton("Add Task");
-		buttonPanel.add(addTaskButton);
+		taskButton = new JButton("Add Task");
 		buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		buttonPanel.add(taskButton);
 		mainPanel.add(buttonPanel);
 	}
 	
