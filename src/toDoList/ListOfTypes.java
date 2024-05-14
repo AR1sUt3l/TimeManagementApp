@@ -33,10 +33,17 @@ public class ListOfTypes implements SortByAlphabet
 		readFile.close();
 	}
 	
-	public void addTask(Task task)
+	public void addType(String type)
 	{
 		
 	}
+	
+	public void removeType(String type)
+	{
+		
+	}
+	
+	
 	
 	public ArrayList<String> getList()
 	{
