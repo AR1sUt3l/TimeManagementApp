@@ -23,7 +23,7 @@ public class TaskPanel extends JPanel
 	
 	public TaskPanel()
 	{
-		setPreferredSize(new Dimension(200, 50));
+		setPreferredSize(new Dimension(350, 50));
 		setLayout(new GridLayout(1, 2));
 		setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		setLabels();
@@ -43,13 +43,8 @@ public class TaskPanel extends JPanel
 	
 	public void setRightPanel()
 	{
-		rightPanel.setLayout(new GridLayout(3, 1));
-//		rightPanel.add(emptyPanel);
 		setCheckBox();
 		rightPanel.add(checkBoxPanel);
-		rightPanel.add(checkBoxPanel);
-		rightPanel.add(checkBoxPanel);
-//		rightPanel.add(emptyPanel);
 	}
 	
 	public void setCheckBox()
