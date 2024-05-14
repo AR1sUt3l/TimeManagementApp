@@ -1,10 +1,5 @@
 # TimeManagementApp
 
-[TOC]
-## Introduction
-### Purpose
-### Features
-
 ## Introduction
 
 ### Purpose
