@@ -1,4 +1,4 @@
-package toDoList;
+package toDoListView;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,7 +23,7 @@ public class TaskPanel extends JPanel
 	
 	public TaskPanel()
 	{
-		setPreferredSize(new Dimension(350, 50));
+		setPreferredSize(new Dimension(375, 50));
 		setLayout(new GridLayout(1, 2));
 		setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		setLabels();
