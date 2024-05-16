@@ -1,8 +1,12 @@
-package toDoList;
+package toDoListTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import toDoList.DueDate;
+import toDoList.Task;
+import toDoList.Type;
 
 class TestToDoList
 {
