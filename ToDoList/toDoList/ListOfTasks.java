@@ -13,6 +13,11 @@ public class ListOfTasks implements SortByAlphabet, SortByDeadline, SortByType
 		_tempList.add(task);
 	}
 	
+	public void removeTask(Task task)
+	{
+		
+	}
+	
 	@Override
 	public void sortByType()
 	{
@@ -30,7 +35,10 @@ public class ListOfTasks implements SortByAlphabet, SortByDeadline, SortByType
 	@Override
 	public void sortAlphabetically()
 	{
-		// TODO Auto-generated method stub
+		for(int i = 0; i < _defaultList.size(); i++)
+		{
+			
+		}
 		
 	}
 	
