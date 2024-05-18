@@ -49,26 +49,3 @@ The application has 3 main parts:
 | 6       | Sort types list by alphabetic order upon addition of new type   | Type.java       | Pass        |
 | 7       | Delete type from list when no current tasks of that type exists | Type.java       | Pass        |
 | 8       | Allow users to be able to not include a deadline and and type for task | Task.java | Pass |
-
-## Weekly Updates
-### Week 1
-* Thought of what I wanted to do for my final project
-* Worked on README
-  - Added the Introduction
-* Made the rough draft of the CRC cards and Class Diagrams
-### Week 2
-* Worked on some of the classes: Task, Type
-* Added some interfaces
-* Added a few unit tests for Type class
-### Week 3
-* Continued working on and refined some of the classes: Type
-* Added a wireframe
-### Week 4
-* Continued working on some classes
-* Added more tests for the unit test
-* Created RTM
-### Week 5
-* Continued working on some more of the classes
-* Created a simple GUI
-### Week 6
-* Continued working on the GUI
