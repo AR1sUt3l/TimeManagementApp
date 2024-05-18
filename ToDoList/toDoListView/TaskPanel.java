@@ -13,7 +13,9 @@ import javax.swing.JPanel;
 
 public class TaskPanel extends JPanel
 {
-	private JPanel textPanel = new JPanel();
+	private int panelWidth = ToDoListView.WINDOW_WIDTH - 25;
+	private int panelHeight = 50;
+ 	private JPanel textPanel = new JPanel();
 	private JPanel rightPanel = new JPanel();
 	private JPanel checkBoxPanel = new JPanel();
 	private JPanel emptyPanel = new JPanel();
@@ -23,7 +25,7 @@ public class TaskPanel extends JPanel
 	
 	public TaskPanel()
 	{
-		setPreferredSize(new Dimension(375, 50));
+		setPreferredSize(new Dimension(panelWidth, panelHeight));
 		setLayout(new GridLayout(1, 2));
 		setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		setLabels();
