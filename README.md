@@ -1,5 +1,7 @@
 # TimeManagementApp
 
+## Table Of Contents
+
 ## Introduction
 
 ### Purpose
