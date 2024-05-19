@@ -4,6 +4,7 @@
 * [Purpose](#purpose)
 * [Features](#features)
 * [Requirements](#requirements)
+* [CRC Cards](#crccards)
 
 ## Description
 
@@ -36,7 +37,7 @@ The application has 3 main parts:
   - has a awards badges based on how many tasks you completed, and how long the user has used the pomodoro timer
   - will refresh every month and keep record of the badges earned in the previous months
 
-## CRC Card
+## CRC Cards
 ![CRC Cards](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/CRC%20Cards/v1.jpg)
 
 ## Class Diagram
