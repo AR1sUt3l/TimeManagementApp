@@ -5,6 +5,9 @@
 * [Features](#features)
 * [Requirements](#requirements)
 * [CRC Cards](#crccards)
+* [Class Diagram](#classdiagram)
+* [Wireframe](#wireframe)
+* [Requirements Traceability Matrix](#requirementstraceabilitymatrix)
 
 ## Description
 
@@ -43,7 +46,7 @@ The application has 3 main parts:
 ## Class Diagram
 ![Class Diagram](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/Class%20Diagrams/v1.jpg)
 
-## WireFrame
+## Wireframe
 ![WireFrame](https://github.com/AR1sUt3l/TimeManagementApp/blob/main/images/WireFrame/v1.png)
 
 ## Requirements Traceability Matrix
