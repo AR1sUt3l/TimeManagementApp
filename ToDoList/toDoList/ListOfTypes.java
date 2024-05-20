@@ -14,7 +14,18 @@ public class ListOfTypes implements SortByAlphabet
 	
 	public void updateTextFile() throws IOException
 	{
-		
+		File listFile = new File("textFiles/TypesList.txt");
+		if (!listFile.exists())
+		{
+			System.out.println("Error: File Not Found");
+			System.exit(0);
+		}
+		PrintWriter writeFile = new PrintWriter(listFile);
+		for (int i = 0; i < _list.size(); i++)
+		{
+			writeFile.println(_list.get(i));
+		}
+		writeFile.close();
 	}
 	
 	public void updateList() throws IOException
@@ -33,17 +44,40 @@ public class ListOfTypes implements SortByAlphabet
 		readFile.close();
 	}
 	
-	public void addType(String type)
+	public void addType(String newType)
 	{
-		
+		boolean isInList = false;
+		if(_list.isEmpty())
+		{
+			_list.add(newType);
+		}
+		else if(_list.size() == 1)
+		{
+			if(_list.get(0) != newType)
+			{
+				_list.add(newType);
+			}
+		}
+		else
+		{
+			for (int i = 0; i < _list.size(); i++)
+			{
+				if(newType == _list.get(i))
+				{
+					isInList = true;
+				}
+			}
+		}
+		if(isInList == false)
+		{
+			_list.add(newType);
+		}
 	}
 	
 	public void removeType(String type)
 	{
-		
+		_list.remove(type);
 	}
-	
-	
 	
 	public ArrayList<String> getList()
 	{
@@ -70,16 +104,7 @@ public class ListOfTypes implements SortByAlphabet
 	@Override
 	public void sortAlphabetically()
 	{
-//		String[] list = new String[_listOfTypes.size()];
-//		list[0] = _listOfTypes.get(0);
 		_list.remove(0);
-//		for(int i = 1; i < _listOfTypes.size() - 1; i++)
-//		{
-//			if(_listOfTypes.get(i).charAt(0) > _listOfTypes.get(i + 1).charAt(0))
-//			{
-//				Collections.swap(_listOfTypes, i, i + 1);
-//			}
-//		}
 		Collections.sort(_list);
 		_list.add(0, DEFAULT_TYPE);
 	}
