@@ -53,32 +53,7 @@ public class Type
 	
 	public void addNewType(String type)
 	{
-		boolean isInList = false;
-		if(_listOfTypes.getList().isEmpty())
-		{
-			_listOfTypes.getList().add(type);
-		}
-		else if(_listOfTypes.getList().size() == 1)
-		{
-			if(_listOfTypes.getList().get(0) != type)
-			{
-				_listOfTypes.getList().add(type);
-			}
-		}
-		else
-		{
-			for (int i = 0; i < _listOfTypes.getList().size(); i++)
-			{
-				if(type == _listOfTypes.getList().get(i))
-				{
-					isInList = true;
-				}
-			}
-			if(isInList == false)
-			{
-				_listOfTypes.getList().add(type);
-			}
-		}
+		
 	}
 	
 	
