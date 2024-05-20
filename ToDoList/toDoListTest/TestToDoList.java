@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import toDoList.DueDate;
+import toDoList.ListOfTypes;
 import toDoList.Task;
 import toDoList.Type;
 
@@ -28,13 +29,21 @@ class TestToDoList
 		Type subject3 = new Type("black studies");
 		assertEquals("Black Studies", subject3.getType());
 		assertEquals("General, English, Math 150, Black Studies", subject3.toString());
-//		subject3.sortAlphabetically();
 		assertEquals("General, Black Studies, English, Math 150", subject3.toString());
 	}
 	
+	@Test
+	void testListOfTypes()
+	{
+		ListOfTypes list = new ListOfTypes();
+	}
+	
+	@Test
 	void testDueDate()
 	{
-		DueDate test = new DueDate();
+		DueDate date1 = new DueDate("04/12/2005");
+		assertEquals("04/12/2005", date1.toString());
+		
 	}
 	
 	@Test
