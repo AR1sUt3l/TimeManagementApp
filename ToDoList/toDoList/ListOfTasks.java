@@ -1,5 +1,6 @@
 package toDoList;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class ListOfTasks implements SortByAlphabet, SortByDeadline, SortByType
@@ -15,14 +16,17 @@ public class ListOfTasks implements SortByAlphabet, SortByDeadline, SortByType
 	
 	public void removeTask(Task task)
 	{
-		
+		_defaultList.remove(task);
 	}
 	
 	@Override
 	public void sortByType()
 	{
 		// TODO Auto-generated method stub
-		
+		for (int i = 0; i < _defaultList.size(); i++)
+		{
+//			if (_defaultList.get(i).getTaskType() == )
+		}
 	}
 
 	@Override
