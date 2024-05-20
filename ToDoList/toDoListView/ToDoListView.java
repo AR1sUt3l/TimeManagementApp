@@ -9,15 +9,18 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class ToDoListView extends JFrame
 {
-	private static final int WINDOW_WIDTH = 400;
-	private static final int WINDOW_HEIGHT = 550;
+	public static final int WINDOW_WIDTH = 600;
+	public static final int WINDOW_HEIGHT = 850;
 	private static final String TITLE = "To Do List";
 	private static final String TEXT_FOR_TODAY = "Today";
 //	private static final String SEPARATION_LINE
+//	private static final JSeparator
 	
 	private JPanel mainPanel = new JPanel();
 	private JPanel todayPanel = new JPanel();
@@ -32,6 +35,7 @@ public class ToDoListView extends JFrame
 	private JButton toDoListButton;
 	private JButton homeButton;
 	private JButton timerButton;
+	private JButton settingsButton;
 	
 	public ToDoListView()
 	{
@@ -75,22 +79,28 @@ public class ToDoListView extends JFrame
 	
 	private void addDateSection()
 	{
-		date = new JLabel("Date");
+		datePanel.add(new JLabel("Hello"));
+		JSeparator s = new JSeparator(); 
+        s.setOrientation(SwingConstants.HORIZONTAL); 	
+        datePanel.add(s);
+        date = new JLabel("Date");
 		datePanel.add(new Line());
 		datePanel.add(date);
 		mainPanel.add(datePanel);
-	}
-	
+	} 
 	private void addTaskButton()
 	{
+		settingsButton = new JButton("Settings");
 		taskButton = new JButton("Add Task");
 		buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		buttonPanel.add(taskButton);
+		buttonPanel.add(settingsButton);
 		mainPanel.add(buttonPanel);
 	}
 	
 	private void addBottomSection()
 	{
+		bottomPanel.setLayout(new GridLayout());
 		toDoListButton = new JButton("To Do List");
 		toDoListButton.setBounds(0, 10, 100, 10);
 		homeButton = new JButton("Home");
