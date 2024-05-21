@@ -2,8 +2,13 @@ package toDoListView;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -22,15 +27,18 @@ public class ToDoListView extends JFrame
 //	private static final String SEPARATION_LINE
 //	private static final JSeparator
 	
-	private JPanel mainPanel = new JPanel();
+	private JPanel mainPanel;
 	private JPanel todayPanel = new JPanel();
-	private JPanel datePanel = new JPanel();
+	private JPanel dueDatePanel = new JPanel();
+	private JPanel noDueDatePanel = new JPanel();
 	private JPanel buttonPanel = new JPanel();
 	private JPanel bottomPanel = new JPanel();
+	private JPanel imagePanel = new JPanel();
 	
 	private JLabel topText;
 	private JLabel lineBreak;
-	private JLabel date;
+	private JLabel dueDate;
+	private JLabel noDueDate;
 	private JButton taskButton;
 	private JButton toDoListButton;
 	private JButton homeButton;
@@ -51,47 +59,74 @@ public class ToDoListView extends JFrame
 	{
 		setTitle(TITLE);
 		setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
+		add(new JLabel(new ImageIcon("images/ToDoListView/window.png")));
+//		ImageIcon image = new ImageIcon("images/ToDoListView/window.png");
+//		setIconImage(image);
 	}
 	
 	private void initialUI()
 	{
+		mainPanel = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g){
+				super.paintComponent(g);
+				//Load background image and draw it
+				//image from acesporty.com
+				ImageIcon backgroundImage = new ImageIcon("images/ToDoListView/mainView.png");
+				g.drawImage(backgroundImage.getImage(),0, 0,getWidth(), getHeight(),this);
+				}
+			};
 		mainPanel.setLayout(new FlowLayout());
-		addTodayText();
-		addTaskSection();
-		addTaskSection();
-		addDateSection();
+//		addTodayText();
+//		addDateSection();
+		addDueDate();
+		addNoDueDate();
+		
 		addTaskButton();
 		addBottomSection();
 		add(mainPanel);
 	}
 	
-	private void addTodayText()
-	{
-		topText = new JLabel(TEXT_FOR_TODAY);
-		todayPanel.add(topText);
-		mainPanel.add(todayPanel);
-	}
+//	private void addTodayText()
+//	{
+//		topText = new JLabel(TEXT_FOR_TODAY);
+//		todayPanel.add(topText);
+//		mainPanel.add(todayPanel);
+//	}
 	
 	private void addTaskSection()
 	{
 		mainPanel.add(new TaskPanel());
 	}
 	
-	private void addDateSection()
+//	private void addDateSection()
+//	{
+//        date = new JLabel("Date");
+//		datePanel.add(new Line());
+//		datePanel.add(date);
+//		mainPanel.add(datePanel);
+//	} 
+	
+	private void addDueDate()
 	{
-		datePanel.add(new JLabel("Hello"));
-		JSeparator s = new JSeparator(); 
-        s.setOrientation(SwingConstants.HORIZONTAL); 	
-        datePanel.add(s);
-        date = new JLabel("Date");
-		datePanel.add(new Line());
-		datePanel.add(date);
-		mainPanel.add(datePanel);
-	} 
+		dueDate = new JLabel("To Do");
+		dueDatePanel.add(dueDate);
+		mainPanel.add(dueDatePanel);
+	}
+	
+	private void addNoDueDate()
+	{
+		noDueDate = new JLabel("No Deadline");
+		noDueDatePanel.add(noDueDate);
+		mainPanel.add(noDueDatePanel);
+	}
+	
 	private void addTaskButton()
 	{
 		settingsButton = new JButton("Settings");
 		taskButton = new JButton("Add Task");
+		TaskButtonListener listener = new TaskButtonListener();
+		taskButton.addActionListener(listener);
 		buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		buttonPanel.add(taskButton);
 		buttonPanel.add(settingsButton);
@@ -116,6 +151,15 @@ public class ToDoListView extends JFrame
 	public static void main(String[] args)
 	{
 		new ToDoListView();
+	}
+	
+	private class TaskButtonListener implements ActionListener
+	{		
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			new AddTaskView();
+		}
 	}
 	
 }
