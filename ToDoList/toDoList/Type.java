@@ -51,6 +51,11 @@ public class Type
 		return word;
 	}
 	
+	public String toString()
+	{
+		return _type;
+	}
+	
 	public void addNewType(String type)
 	{
 		
