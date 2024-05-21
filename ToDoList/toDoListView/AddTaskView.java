@@ -2,6 +2,8 @@ package toDoListView;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -10,10 +12,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import toDoList.Task;
+
 public class AddTaskView extends JFrame
 {
-	private static final int WINDOW_HEIGHT = 600;
-	private static final int WINDOW_WIDTH = 450;
+	private static final int WINDOW_HEIGHT = 500;
+	private static final int WINDOW_WIDTH = 400;
 	
 	private JPanel mainPanel = new JPanel();
 	private JPanel titlePanel = new JPanel();
@@ -26,13 +30,13 @@ public class AddTaskView extends JFrame
 	private JLabel nameLabel;
 	private JTextField nameOfTask;
 	private JLabel typeLabel;
-	private JComboBox typeList;
+	private JComboBox<String> typeList;
 	private JLabel deadlineLabel;
-	private JComboBox date;
-	private JComboBox month;
-	private JComboBox year;
+	private JTextField deadlineDate;
 	private JButton enterButton;
 	private JButton cancelButton;
+	
+	private String name;
 	
 	private String[] list = {"General", "English", "Math", "Science"};
 	private String[] dates = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -54,7 +58,6 @@ public class AddTaskView extends JFrame
 	
 	public void initialFrame()
 	{
-		setTitle("New Task");
 		setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
 	}
 	
@@ -88,7 +91,7 @@ public class AddTaskView extends JFrame
 	private void addType()
 	{
 		typeLabel = new JLabel("Type: ");
-		typeList = new JComboBox(list);
+		typeList = new JComboBox<String>(list);
 		typePanel.add(typeLabel);
 		typePanel.add(typeList);
 		mainPanel.add(typePanel);
@@ -97,13 +100,9 @@ public class AddTaskView extends JFrame
 	private void addDeadline()
 	{
 		deadlineLabel = new JLabel("Deadline: ");
-		date = new JComboBox(dates);
-		month = new JComboBox(months);
-		year = new JComboBox(years);
+		deadlineDate = new JTextField("Please enter in MM/DD/YYYY");
 		deadlinePanel.add(deadlineLabel);
-		deadlinePanel.add(date);
-		deadlinePanel.add(month);
-		deadlinePanel.add(year);
+		deadlinePanel.add(deadlineDate);
 		mainPanel.add(deadlinePanel);
 	}
 	
@@ -111,6 +110,8 @@ public class AddTaskView extends JFrame
 	{
 		enterButton = new JButton("ENTER");
 		cancelButton = new JButton("CANCEL");
+		closeWindow cancelButtonListener = new closeWindow();
+		cancelButton.addActionListener(cancelButtonListener);
 		buttonsPanel.add(enterButton);
 		buttonsPanel.add(cancelButton);
 		mainPanel.add(buttonsPanel);
@@ -119,6 +120,27 @@ public class AddTaskView extends JFrame
 	public static void main(String[] args)
 	{
 		new AddTaskView();
+	}
+	
+	private class AddTask implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			name = nameOfTask.getText();
+			String typeInString = typeList.getSelectedItem().toString();
+			System.out.println(typeInString);
+//			Type type = new Type(typeInString);
+//			Task newTask = new Task(name, type);
+		}
+	}
+	private class closeWindow implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			dispose();
+		}
 	}
 	
 }
