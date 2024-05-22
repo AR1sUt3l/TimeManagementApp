@@ -109,6 +109,8 @@ public class AddTaskView extends JFrame
 	private void addButtons()
 	{
 		enterButton = new JButton("ENTER");
+		AddTask enterButtonListener = new AddTask();
+		enterButton.addActionListener(enterButtonListener);
 		cancelButton = new JButton("CANCEL");
 		closeWindow cancelButtonListener = new closeWindow();
 		cancelButton.addActionListener(cancelButtonListener);
@@ -132,6 +134,15 @@ public class AddTaskView extends JFrame
 			System.out.println(typeInString);
 //			Type type = new Type(typeInString);
 //			Task newTask = new Task(name, type);
+			if (deadlineDate.getText() == "")
+			{
+				new ToDoListView().addTaskToNoDueDate();
+			}
+			else
+			{
+				new ToDoListView().addTaskToDueDate();
+			}
+			dispose();
 		}
 	}
 	private class closeWindow implements ActionListener
