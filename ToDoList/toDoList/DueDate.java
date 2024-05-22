@@ -12,23 +12,38 @@ public class DueDate
 {
 	private DateTimeFormatter monthDayYear = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 	private LocalDateTime currentDate = LocalDateTime.now();
-	private Date _dueDate;
+	private Date dueDate;
 	private SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+	private String noDueDate = "";
 	
 	public DueDate(String date)
 	{
-		try
+		if (date == "")
 		{
-			_dueDate = sdf.parse(date);
+			noDueDate = "No Deadline";
 		}
-		catch (ParseException e)
+		else
 		{
-			System.out.println("Incorrect Date Format");
+			try
+			{
+				dueDate = sdf.parse(date);
+			}
+			catch (ParseException e)
+			{
+				System.out.println("Incorrect Date Format");
+			}
 		}
 	}
 	
 	public String toString()
 	{
-		return sdf.format(_dueDate);
+		if (noDueDate == "")
+		{
+			return noDueDate;
+		}
+		else
+		{
+			return sdf.format(dueDate);
+		}
 	}
 }
