@@ -1,5 +1,28 @@
 package toDoListView;
 
+/**
+ * Lead Author(s):
+ * @author Aleczandria Villagracia
+ * <<add additional lead authors here, with a full first and last name>>
+ * 
+ * Other contributors:
+ * <<add additional contributors (mentors, tutors, friends) here, with contact information>>
+ * 
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * Retrieved from https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ * <<add more references here>>
+ *  
+ * Version/date: 05.24.2024.01
+ * 
+ * Responsibilities of class:
+ * 
+ */
+
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
@@ -7,44 +30,40 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import toDoList.ListOfTasks;
+
 public class ToDoListView extends JFrame
 {
-	public static final int WINDOW_WIDTH = 600;
-	public static final int WINDOW_HEIGHT = 850;
+	public static final int WINDOW_WIDTH = 500;
+	public static final int WINDOW_HEIGHT = 750;
 	private static final String TITLE = "To Do List";
-	private static final String TEXT_FOR_TODAY = "Today";
-//	private static final String SEPARATION_LINE
-//	private static final JSeparator
+	private static final String DEADLINE = "With Deadline";
 	
-	private JPanel mainPanel;
-	private JPanel todayPanel = new JPanel();
-	private JPanel dueDatePanel = new JPanel();
-	private JPanel noDueDatePanel = new JPanel();
-	private JPanel buttonPanel = new JPanel();
-	private JPanel bottomPanel = new JPanel();
-	private JPanel imagePanel = new JPanel();
-	
-	private JLabel topText;
-	private JLabel lineBreak;
-	private JLabel dueDate;
-	private JLabel noDueDate;
+	private static JPanel mainPanel = new JPanel();
+	private static JPanel buttonPanel = new JPanel();
+	private static JPanel centerPanel = new JPanel();
+
 	private JButton taskButton;
-	private JButton toDoListButton;
-	private JButton homeButton;
-	private JButton timerButton;
-	private JButton settingsButton;
-	
+	private JButton completedButton;
+		
 	public ToDoListView()
 	{
 		initialFrame();
@@ -52,100 +71,65 @@ public class ToDoListView extends JFrame
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
+		setResizable(false);
 		setVisible(true);
 	}
 	
-	private void initialFrame()
+	/**
+	 * Initializes the frame by setting the title and size
+	 */
+	public void initialFrame()
 	{
 		setTitle(TITLE);
 		setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
-		add(new JLabel(new ImageIcon("images/ToDoListView/window.png")));
-//		ImageIcon image = new ImageIcon("images/ToDoListView/window.png");
-//		setIconImage(image);
 	}
 	
-	private void initialUI()
+	/**
+	 * Initializes the UI
+	 */
+	public void initialUI()
 	{
-		mainPanel = new JPanel(){
-			@Override
-			protected void paintComponent(Graphics g){
-				super.paintComponent(g);
-				//Load background image and draw it
-				//image from acesporty.com
-				ImageIcon backgroundImage = new ImageIcon("images/ToDoListView/mainView.png");
-				g.drawImage(backgroundImage.getImage(),0, 0,getWidth(), getHeight(),this);
-				}
-			};
-		mainPanel.setLayout(new FlowLayout());
-//		addTodayText();
-//		addDateSection();
-		addDueDate();
-		addNoDueDate();
-		
-		addTaskButton();
+		mainPanel.setLayout(new BorderLayout());
+		addCenterSection();
 		addBottomSection();
 		add(mainPanel);
 	}
 	
-//	private void addTodayText()
-//	{
-//		topText = new JLabel(TEXT_FOR_TODAY);
-//		todayPanel.add(topText);
-//		mainPanel.add(todayPanel);
-//	}
-	
-	private void addTaskSection()
+	/**
+	 * Add the center panel that will hold the task panels
+	 */
+	public void addCenterSection()
 	{
-		mainPanel.add(new TaskPanel());
+		centerPanel.setLayout(new FlowLayout());
+		centerPanel.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+		mainPanel.add(centerPanel, BorderLayout.CENTER);
 	}
 	
-//	private void addDateSection()
-//	{
-//        date = new JLabel("Date");
-//		datePanel.add(new Line());
-//		datePanel.add(date);
-//		mainPanel.add(datePanel);
-//	} 
-	
-	private void addDueDate()
+	/**
+	 * 
+	 * @return center panel that contains the tasks
+	 */
+	public JPanel getCenterPanel()
 	{
-		dueDate = new JLabel("To Do");
-		dueDatePanel.add(dueDate);
-		mainPanel.add(dueDatePanel);
+		return centerPanel;
 	}
 	
-	private void addNoDueDate()
+	/**
+	 * Adds the buttons that adds a new task and shows the completed tasks
+	 */
+	public void addBottomSection()
 	{
-		noDueDate = new JLabel("No Deadline");
-		noDueDatePanel.add(noDueDate);
-		mainPanel.add(noDueDatePanel);
-	}
-	
-	private void addTaskButton()
-	{
-		settingsButton = new JButton("Settings");
+		completedButton = new JButton("Completed Tasks");
+		CompletedTaskListener completedListener = new CompletedTaskListener();
+		completedButton.addActionListener(completedListener);
 		taskButton = new JButton("Add Task");
 		TaskButtonListener listener = new TaskButtonListener();
 		taskButton.addActionListener(listener);
-		buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		buttonPanel.add(taskButton);
-		buttonPanel.add(settingsButton);
-		mainPanel.add(buttonPanel);
-	}
-	
-	private void addBottomSection()
-	{
-		bottomPanel.setLayout(new GridLayout());
-		toDoListButton = new JButton("To Do List");
-		toDoListButton.setBounds(0, 10, 100, 10);
-		homeButton = new JButton("Home");
-		homeButton.setBounds(110, 10, 100, 10);
-		timerButton = new JButton("Pomodoro Timer");
-		timerButton.setBounds(220, 10, 100, 10);
-		bottomPanel.add(toDoListButton);
-		bottomPanel.add(homeButton);
-		bottomPanel.add(timerButton);
-		mainPanel.add(bottomPanel);
+		buttonPanel.add(completedButton);
+		buttonPanel.setOpaque(false);
+		mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 	}
 	
 	public static void main(String[] args)
@@ -153,13 +137,46 @@ public class ToDoListView extends JFrame
 		new ToDoListView();
 	}
 	
+	/**
+	 * Event listener for the button that adds tasks
+	 */
 	private class TaskButtonListener implements ActionListener
 	{		
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
-			new AddTaskView();
+			new AddTaskView(ToDoListView.this);
 		}
 	}
+	
+	/**
+	 * Print out the text file that contains the printed class
+	 */
+	private class CompletedTaskListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			File file = new File("textFiles/CompletedTasks.txt");
+			Scanner readFile = null;
+			try
+			{
+				readFile = new Scanner(file);
+				while (readFile.hasNext())
+				{
+					System.out.print(readFile.nextLine());
+				}
+			}
+			catch (IOException exception)
+			{
+				exception.printStackTrace();
+			}
+			finally
+			{
+				readFile.close();
+			}
+		}
+	}
+	
 	
 }
