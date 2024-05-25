@@ -7,11 +7,41 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+/**
+ * Lead Author(s):
+ * @author Aleczandria Villagracia
+ * <<add additional lead authors here, with a full first and last name>>
+ * 
+ * Other contributors:
+ * <<add additional contributors (mentors, tutors, friends) here, with contact information>>
+ * 
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * Retrieved from https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ * <<add more references here>>
+ *  
+ * Version/date: 05.24.2024.01
+ * 
+ * Responsibilities of class:
+ * 
+ */
+
 public class ListOfTypes implements SortByAlphabet
 {
 	private static final String DEFAULT_TYPE = "General";
 	private static ArrayList<String> _list = new ArrayList<>();
 	
+	public ListOfTypes()
+	{
+		_list.add(DEFAULT_TYPE);
+		_list.add("New Type");
+	}
+	
+	/**
+	 * Updates TypesList.txt
+	 * @throws IOException when file cannot be found
+	 */
 	public void updateTextFile() throws IOException
 	{
 		File listFile = new File("textFiles/TypesList.txt");
@@ -28,6 +58,10 @@ public class ListOfTypes implements SortByAlphabet
 		writeFile.close();
 	}
 	
+	/**
+	 * Updates List with data from TypesList.txt
+	 * @throws IOException when file cannot be found
+	 */
 	public void updateList() throws IOException
 	{
 		File listFile = new File("textFiles/TypesList.txt");
@@ -44,6 +78,10 @@ public class ListOfTypes implements SortByAlphabet
 		readFile.close();
 	}
 	
+	/**
+	 * Adds type to the list if it is not on the list
+	 * @param newType
+	 */
 	public void addType(String newType)
 	{
 		boolean isInList = false;
@@ -74,16 +112,32 @@ public class ListOfTypes implements SortByAlphabet
 		}
 	}
 	
+	/**
+	 * Removes type on the list
+	 * @param type
+	 */
 	public void removeType(String type)
 	{
 		_list.remove(type);
 	}
 	
-	public ArrayList<String> getList()
+	/**
+	 * 
+	 * @return list as a String array
+	 */
+	public String[] getList()
 	{
-		return _list;
+		String[] list = new String[_list.size()];
+		for (int i = 0; i < _list.size(); i++)
+		{
+			list[i] = _list.get(i);
+		}
+		return list;
 	}
 	
+	/**
+	 * Gets the types in the list
+	 */
 	public String toString()
 	{
 		if(_list.isEmpty())
@@ -102,6 +156,9 @@ public class ListOfTypes implements SortByAlphabet
 	}
 
 	@Override
+	/**
+	 * Sorts the list alphabetically
+	 */
 	public void sortAlphabetically()
 	{
 		_list.remove(0);
