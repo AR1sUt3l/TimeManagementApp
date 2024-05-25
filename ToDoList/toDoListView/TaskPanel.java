@@ -5,6 +5,12 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -13,55 +19,134 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import toDoList.ListOfTasks;
 import toDoList.Task;
 
-public abstract class TaskPanel extends JPanel
+/**
+ * Lead Author(s):
+ * @author Aleczandria Villagracia
+ * <<add additional lead authors here, with a full first and last name>>
+ * 
+ * Other contributors:
+ * <<add additional contributors (mentors, tutors, friends) here, with contact information>>
+ * 
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * Retrieved from https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ * <<add more references here>>
+ *  
+ * Version/date: 05.24.2024.01
+ * 
+ * Responsibilities of class:
+ * 
+ */
+
+public class TaskPanel extends JPanel
 {
-	private int panelWidth = ToDoListView.WINDOW_WIDTH - 100;
-	private int panelHeight = 50;
+	protected int panelWidth = ToDoListView.WINDOW_WIDTH - 50;
+	protected int panelHeight = 50;
  	protected JPanel textPanel = new JPanel();
-	private JPanel rightPanel = new JPanel();
+	protected JPanel rightPanel = new JPanel();
 	private JPanel checkBoxPanel = new JPanel();
 	private JPanel emptyPanel = new JPanel();
 	private JCheckBox taskCheckBox;
 	protected JLabel nameLabel;
 	protected JLabel deadline;
 	
-	private Task _task = new Task("");
-	
-	public TaskPanel()
-	{		
-		repaint();
+	private Task task;
+	private ToDoListView mainView;
+			
+	public TaskPanel(Task task, ToDoListView mainView)
+	{
+		this.task = task;
+		this.mainView = mainView;
 		setPreferredSize(new Dimension(panelWidth, panelHeight));
-		setLayout(new GridLayout(1, 2));
 		setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		setLayout(new GridLayout(1, 2));
 		setLabels();
 		setRightPanel();
 		add(textPanel);
 		add(rightPanel);
 	}
 	
-	@Override
-	protected void paintComponent(Graphics g)
+	/**
+	 * Adds the name and deadline of the task to the panel
+	 */
+	public void setLabels()
 	{
-		super.paintComponent(g);
-		ImageIcon backgroundImage = new ImageIcon("images/ToDoListView/TaskPanel v1.png");
-		g.drawImage(backgroundImage.getImage(), 0, 0, getWidth(), getHeight(), this);
+		textPanel.setLayout(new GridLayout(2, 1));
+		nameLabel = new JLabel(task.getName());
+		deadline = new JLabel(task.getDeadline().toString());
+		textPanel.add(nameLabel);
+		textPanel.add(deadline);
 	}
 	
-	abstract public void setLabels();
-	
+	/**
+	 * Adds the panel with the checkBox and aligns it to the right
+	 */
 	public void setRightPanel()
 	{
 		setCheckBox();
+		rightPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		rightPanel.add(checkBoxPanel);
 	}
 	
+	/**
+	 * Adds a checkbox and its event listener
+	 */
 	public void setCheckBox()
 	{
-		checkBoxPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		taskCheckBox = new JCheckBox();
+		CheckBoxListener listener = new CheckBoxListener();
+		taskCheckBox.addActionListener(listener);
 		checkBoxPanel.add(taskCheckBox);
 	}
 	
+	/**
+	 * Event listener for the checkbox
+	 */
+	private class CheckBoxListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			task.setToCompleted();
+			addToFile();
+			mainView.getCenterPanel().remove(TaskPanel.this);
+			mainView.getCenterPanel().revalidate();
+		}
+		
+		/**
+		 * Adds the completed task to the CompletedTasks.txt file
+		 */
+		public void addToFile()
+		{
+			File file = new File("textFiles/CompletedTasks.txt");
+			Scanner readFile = null;
+			PrintWriter writeFile = null;
+			String fileContents = "";
+			try
+			{
+				readFile = new Scanner(file);
+				while (readFile.hasNext())
+				{
+					fileContents += readFile.nextLine() + "\n";
+				}
+				writeFile = new PrintWriter(file);
+				writeFile.println(fileContents);
+				writeFile.println(task.toString());
+			}
+			catch (FileNotFoundException e)
+			{
+				e.printStackTrace();
+			}
+			finally
+			{
+				readFile.close();
+				writeFile.close();
+			}
+			
+		}
+	}
 }
