@@ -6,8 +6,29 @@ import org.junit.jupiter.api.Test;
 
 import toDoList.DueDate;
 import toDoList.ListOfTypes;
+import toDoList.NameNotFoundException;
 import toDoList.Task;
 import toDoList.Type;
+
+/**
+ * Lead Author(s):
+ * @author Aleczandria Villagracia
+ * <<add additional lead authors here, with a full first and last name>>
+ * 
+ * Other contributors:
+ * <<add additional contributors (mentors, tutors, friends) here, with contact information>>
+ * 
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * Retrieved from https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ * <<add more references here>>
+ *  
+ * Version/date: 05.24.2024.01
+ * 
+ * Responsibilities of class:
+ * 
+ */
 
 class TestToDoList
 {
@@ -47,7 +68,7 @@ class TestToDoList
 	}
 	
 	@Test
-	void testTask()
+	void testTask() throws NameNotFoundException
 	{
 		Task task1 = new Task("EL Homework");
 		assertEquals("EL Homework", task1.getName());
@@ -55,6 +76,19 @@ class TestToDoList
 		assertNotEquals("EL Homework", task1.getName());
 		assertEquals("English Essay", task1.getName());
 	}
+	
+	@Test
+	void testListOfTasks()
+	{
+		
+	}
+	
+	@Test
+	void testTaskPanel()
+	{
+		
+	}
+	
 
 	
 }
