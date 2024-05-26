@@ -77,7 +77,6 @@ public class AddTaskView extends JFrame
 		initialFrame();
 		initialUI();
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);
 	}
