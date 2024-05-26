@@ -60,6 +60,8 @@ public class ToDoListView extends JFrame
 	private static JPanel mainPanel = new JPanel();
 	private static JPanel buttonPanel = new JPanel();
 	private static JPanel centerPanel = new JPanel();
+	private WithDeadlinePanel deadlinePanel = new WithDeadlinePanel();
+	private WithoutDeadlinePanel noDeadlinePanel = new WithoutDeadlinePanel();
 
 	private JButton taskButton;
 	private JButton completedButton;
@@ -100,8 +102,9 @@ public class ToDoListView extends JFrame
 	 */
 	public void addCenterSection()
 	{
-		centerPanel.setLayout(new FlowLayout());
-		centerPanel.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+		centerPanel.setLayout(new GridLayout(2,1));
+		centerPanel.add(deadlinePanel);
+		centerPanel.add(noDeadlinePanel);
 		mainPanel.add(centerPanel, BorderLayout.CENTER);
 	}
 	
