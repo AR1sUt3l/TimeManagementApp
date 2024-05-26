@@ -33,32 +33,24 @@ public class DueDate
 {
 	private DateTimeFormatter monthDayYear = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 	private LocalDateTime currentDate = LocalDateTime.now();
-	private String dueDate;
+	private Date dueDate;
 	private SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 	private String noDueDate = "";
 	
 	public DueDate(String date)
 	{
-//		if (date == "" || date == null)
-//		{
-//			noDueDate = "No Deadline";
-//		}
-//		else
-//		{
-//			try
-//			{
-//				dueDate = sdf.parse(date);
-//			}
-//			catch (IllegalArgumentException e)
-//			{
-//				System.out.println("Invalid Date");
-//			}
-//			catch (ParseException e)
-//			{
-//				System.out.println("Incorrect Date Format");
-//			}
-//		}
-		this.dueDate = date;
+		try
+		{
+			dueDate = sdf.parse(date);
+		}
+		catch (IllegalArgumentException e)
+		{
+			System.out.println("Invalid Date");
+		}
+		catch (ParseException e)
+		{
+			noDueDate = "No Deadline";
+		}
 	}
 	
 	/**
@@ -75,6 +67,13 @@ public class DueDate
 	 */
 	public String toString()
 	{
-		return dueDate;
+		if (noDueDate == "No Deadline")
+		{
+			return noDueDate;
+		}
+		else
+		{
+			return sdf.format(dueDate);
+		}
 	}
 }
