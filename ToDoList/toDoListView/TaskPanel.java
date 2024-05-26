@@ -42,7 +42,7 @@ import toDoList.Task;
  * 
  */
 
-public class TaskPanel extends JPanel
+public abstract class TaskPanel extends JPanel
 {
 	protected int panelWidth = ToDoListView.WINDOW_WIDTH - 50;
 	protected int panelHeight = 50;
