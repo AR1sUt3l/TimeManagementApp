@@ -49,13 +49,12 @@ public abstract class TaskPanel extends JPanel
  	protected JPanel textPanel = new JPanel();
 	protected JPanel rightPanel = new JPanel();
 	private JPanel checkBoxPanel = new JPanel();
-	private JPanel emptyPanel = new JPanel();
 	private JCheckBox taskCheckBox;
 	protected JLabel nameLabel;
 	protected JLabel deadline;
 	
-	private Task task;
-	private ToDoListView mainView;
+	protected Task task;
+	protected ToDoListView mainView;
 			
 	public TaskPanel(Task task, ToDoListView mainView)
 	{
@@ -73,14 +72,7 @@ public abstract class TaskPanel extends JPanel
 	/**
 	 * Adds the name and deadline of the task to the panel
 	 */
-	public void setLabels()
-	{
-		textPanel.setLayout(new GridLayout(2, 1));
-		nameLabel = new JLabel(task.getName());
-		deadline = new JLabel(task.getDeadline().toString());
-		textPanel.add(nameLabel);
-		textPanel.add(deadline);
-	}
+	public abstract void setLabels();
 	
 	/**
 	 * Adds the panel with the checkBox and aligns it to the right
