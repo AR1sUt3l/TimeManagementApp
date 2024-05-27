@@ -15,13 +15,22 @@ public class WithoutDeadlinePanel extends JPanel
 {
 	private JLabel noDueDate;
 	
-	public WithoutDeadlinePanel()
+	private Task task;
+	private ToDoListView mainView;
+	
+	public WithoutDeadlinePanel(ToDoListView mainView)
 	{
-		noDueDate = new JLabel("No Deadlines");
+		this.mainView = mainView;
+		noDueDate = new JLabel("No Deadline");
 		add(noDueDate);
 		setBorder(BorderFactory.createLineBorder(Color.CYAN));
 		setLayout(new FlowLayout());
 		setOpaque(false);
+	}
+	
+	public void addTaskPanel(Task newTask)
+	{
+		add(new WithDeadlineTaskPanel(newTask, mainView));
 	}
 	
 }
