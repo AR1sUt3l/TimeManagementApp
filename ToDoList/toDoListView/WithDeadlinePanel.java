@@ -17,16 +17,23 @@ import toDoList.Task;
 public class WithDeadlinePanel extends JPanel
 {
 	private JLabel dueDate;
-	private String name;
-	private DueDate deadline;
 	
-	public WithDeadlinePanel()
+	private Task task;
+	private ToDoListView mainView;
+	
+	public WithDeadlinePanel(ToDoListView mainView)
 	{
+		this.mainView = mainView;
 		dueDate = new JLabel("With Deadline");
 		add(dueDate);
 		setBorder(BorderFactory.createLineBorder(Color.PINK));
 		setBackground(Color.WHITE);
 		setOpaque(false);
+	}
+	
+	public void addTaskPanel(Task newTask)
+	{
+		add(new WithDeadlineTaskPanel(newTask, mainView));
 	}
 
 }
