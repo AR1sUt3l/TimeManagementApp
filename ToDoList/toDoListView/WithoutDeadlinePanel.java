@@ -31,6 +31,7 @@ public class WithoutDeadlinePanel extends JPanel
 	public void addTaskPanel(Task newTask)
 	{
 		add(new WithDeadlineTaskPanel(newTask, mainView));
+		revalidate();
 	}
 	
 }
