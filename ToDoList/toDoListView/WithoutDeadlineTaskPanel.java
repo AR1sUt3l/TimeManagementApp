@@ -21,7 +21,6 @@ public class WithoutDeadlineTaskPanel extends TaskPanel
 		textPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		nameLabel = new JLabel(task.getName());
 		textPanel.add(nameLabel);
-		textPanel.add(deadline);
 	}
 
 }
