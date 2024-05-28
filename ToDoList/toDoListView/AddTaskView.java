@@ -26,6 +26,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -33,6 +34,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import toDoList.DueDate;
@@ -51,6 +53,8 @@ public class AddTaskView extends JFrame
 	private JPanel typePanel = new JPanel();
 	private JPanel deadlinePanel = new JPanel();
 	private JPanel buttonsPanel = new JPanel();
+	private JPanel deadlineCheckBoxPanel = new JPanel();
+	private JPanel withDueDatePanel = new JPanel();
 	
 	private JLabel title;
 	private JLabel nameLabel;
@@ -63,16 +67,20 @@ public class AddTaskView extends JFrame
 	private JButton cancelButton;
 	private JLabel instructions;
 	private JCheckBox noDeadline;
+	private JButton lastButtonPressed;
 	
 	private ToDoListView mainView;
+	private WithDeadlinePanel withDeadlinePanel;
+	private WithoutDeadlinePanel withoutDeadlinePanel;
 	
 	private ListOfTypes typeList = new ListOfTypes();
 	private String[] list = typeList.getList();
-	private Task task;
-	
-	public AddTaskView(ToDoListView mainView)
+		
+	public AddTaskView(ToDoListView mainView, WithDeadlinePanel withDeadlinePanel, WithoutDeadlinePanel withoutDeadlinePanel)
 	{
 		this.mainView = mainView;
+		this.withDeadlinePanel = withDeadlinePanel;
+		this.withoutDeadlinePanel = withoutDeadlinePanel;
 		
 		initialFrame();
 		initialUI();
@@ -97,6 +105,7 @@ public class AddTaskView extends JFrame
 		mainPanel.setLayout(new GridLayout(4, 1));
 		addTitle();
 		addName();
+		addDeadlineChoice();
 		addDeadline();
 		addButtons();
 		add(mainPanel);
@@ -127,15 +136,36 @@ public class AddTaskView extends JFrame
 	/**
 	 * Adds 3rd 
 	 */
-	private void addDeadline()
+	private void addDeadlineChoice()
+	{
+		deadlinePanel.setLayout(new GridLayout(2,1));
+		ButtonGroup deadlineButtonGroup = new ButtonGroup();
+		JRadioButton withDeadlineRadioButton = new JRadioButton("Have a Deadline");
+		HaveDeadlineListener listener = new HaveDeadlineListener();
+//		UndoHaveDeadlineListener undoListener = new UndoHaveDeadlineListener();
+		withDeadlineRadioButton.addActionListener(listener);
+//		withDeadlineRadioButton.addActionListener(undoListener);
+		JRadioButton withoutDeadlineRadioButton = new JRadioButton("No Deadline");
+		NoDeadlineListener listener2 = new NoDeadlineListener();
+		withoutDeadlineRadioButton.addActionListener(listener2);
+		deadlineButtonGroup.add(withoutDeadlineRadioButton);
+		deadlineButtonGroup.add(withDeadlineRadioButton);
+		deadlineCheckBoxPanel.add(withDeadlineRadioButton);
+		deadlineCheckBoxPanel.add(withoutDeadlineRadioButton);
+		deadlinePanel.add(deadlineCheckBoxPanel);
+		mainPanel.add(deadlinePanel);
+	}
+	
+	public void addDeadline()
 	{
 		deadlineLabel = new JLabel("Deadline: ");
 		deadlineDate = new JTextField(10);
 		instructions = new JLabel("Please enter a valid date in MM/dd/yyyy format");
-		deadlinePanel.add(deadlineLabel);
-		deadlinePanel.add(deadlineDate);
-		deadlinePanel.add(instructions);
-		mainPanel.add(deadlinePanel);
+		withDueDatePanel.add(deadlineLabel);
+		withDueDatePanel.add(deadlineDate);
+		withDueDatePanel.add(instructions);
+		withDueDatePanel.setVisible(false);
+		deadlinePanel.add(withDueDatePanel);
 	}
 	
 	/**
@@ -144,29 +174,55 @@ public class AddTaskView extends JFrame
 	private void addButtons()
 	{
 		enterButton = new JButton("ENTER");
-		AddTask enterButtonListener = new AddTask();
+		EnterButtonListener enterButtonListener = new EnterButtonListener();
 		enterButton.addActionListener(enterButtonListener);
 		cancelButton = new JButton("CANCEL");
-		closeWindow cancelButtonListener = new closeWindow();
+		CancelButtonListener cancelButtonListener = new CancelButtonListener();
 		cancelButton.addActionListener(cancelButtonListener);
 		buttonsPanel.add(enterButton);
 		buttonsPanel.add(cancelButton);
 		mainPanel.add(buttonsPanel);
 	}
 	
+	private class HaveDeadlineListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			withDueDatePanel.setVisible(true);
+			revalidate();
+		}
+	}
+	
+	private class NoDeadlineListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			withDueDatePanel.setVisible(false);
+			revalidate();
+		}
+	}
+	
 	/**
 	 * Event Listener for the enter button
 	 */
-	private class AddTask implements ActionListener
+	private class EnterButtonListener implements ActionListener
 	{
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			String name = nameOfTask.getText();
 			DueDate deadline = new DueDate(deadlineDate.getText());
-			Task newTask;
-			newTask = new Task(name, deadline);
-			mainView.getCenterPanel().add(new TaskPanel(newTask, mainView));
+			Task newTask = new Task(name, deadline);
+			if(newTask.getDeadline().toString() == "No Deadline")
+			{
+				withoutDeadlinePanel.addTaskPanel(newTask);
+			}
+			else
+			{
+				withDeadlinePanel.addTaskPanel(newTask);
+			}
 			mainView.getCenterPanel().revalidate();
 			dispose();
 		}
@@ -175,7 +231,7 @@ public class AddTaskView extends JFrame
 	/**
 	 * Event listener of the cancel button
 	 */
-	private class closeWindow implements ActionListener
+	private class CancelButtonListener implements ActionListener
 	{
 		@Override
 		public void actionPerformed(ActionEvent e)
