@@ -68,10 +68,15 @@ public class AddTaskView extends JFrame
 	private JLabel instructions;
 	private JCheckBox noDeadline;
 	private JButton lastButtonPressed;
-	
+	private ButtonGroup deadlineButtonGroup;
+	private JRadioButton withDeadlineRadioButton;
+	private JRadioButton withoutDeadlineRadioButton;
+
 	private ToDoListView mainView;
 	private WithDeadlinePanel withDeadlinePanel;
 	private WithoutDeadlinePanel withoutDeadlinePanel;
+	
+	private DueDate deadline;
 	
 	private ListOfTypes typeList = new ListOfTypes();
 	private String[] list = typeList.getList();
@@ -139,13 +144,11 @@ public class AddTaskView extends JFrame
 	private void addDeadlineChoice()
 	{
 		deadlinePanel.setLayout(new GridLayout(2,1));
-		ButtonGroup deadlineButtonGroup = new ButtonGroup();
-		JRadioButton withDeadlineRadioButton = new JRadioButton("Have a Deadline");
+		deadlineButtonGroup = new ButtonGroup();
+		withDeadlineRadioButton = new JRadioButton("Have a Deadline");
 		HaveDeadlineListener listener = new HaveDeadlineListener();
-//		UndoHaveDeadlineListener undoListener = new UndoHaveDeadlineListener();
 		withDeadlineRadioButton.addActionListener(listener);
-//		withDeadlineRadioButton.addActionListener(undoListener);
-		JRadioButton withoutDeadlineRadioButton = new JRadioButton("No Deadline");
+		withoutDeadlineRadioButton = new JRadioButton("Don't have a Deadline");
 		NoDeadlineListener listener2 = new NoDeadlineListener();
 		withoutDeadlineRadioButton.addActionListener(listener2);
 		deadlineButtonGroup.add(withoutDeadlineRadioButton);
@@ -190,7 +193,7 @@ public class AddTaskView extends JFrame
 		public void actionPerformed(ActionEvent e)
 		{
 			withDueDatePanel.setVisible(true);
-			revalidate();
+//			revalidate();
 		}
 	}
 	
@@ -200,7 +203,7 @@ public class AddTaskView extends JFrame
 		public void actionPerformed(ActionEvent e)
 		{
 			withDueDatePanel.setVisible(false);
-			revalidate();
+//			revalidate();
 		}
 	}
 	
@@ -213,15 +216,24 @@ public class AddTaskView extends JFrame
 		public void actionPerformed(ActionEvent e)
 		{
 			String name = nameOfTask.getText();
-			DueDate deadline = new DueDate(deadlineDate.getText());
-			Task newTask = new Task(name, deadline);
-			if(newTask.getDeadline().toString() == "No Deadline")
+			String properDate = "";
+			Task newTask;
+			if (withDeadlineRadioButton.isSelected())
 			{
-				withoutDeadlinePanel.addTaskPanel(newTask);
+				deadline = new DueDate(deadlineDate.getText());
+				while (deadline.toString() == "No Deadline")
+				{
+					properDate = JOptionPane.showInputDialog("Please enter a valid date in MM/dd/yyyy");
+					deadline.setDate(properDate);
+				}
+				newTask = new Task(name, deadline);
+				withDeadlinePanel.addTaskPanel(newTask);
 			}
 			else
 			{
-				withDeadlinePanel.addTaskPanel(newTask);
+				deadline = new DueDate("");
+				newTask = new Task(name, deadline);
+				withoutDeadlinePanel.addTaskPanel(newTask);
 			}
 			mainView.getCenterPanel().revalidate();
 			dispose();
