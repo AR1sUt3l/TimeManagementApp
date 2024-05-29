@@ -42,10 +42,24 @@ public class DueDate
 		try
 		{
 			dueDate = sdf.parse(date);
+			noDueDate = "";
 		}
 		catch (IllegalArgumentException e)
 		{
 			System.out.println("Invalid Date");
+		}
+		catch (ParseException e)
+		{
+			noDueDate = "No Deadline";
+		}
+	}
+	
+	public void setDate(String newDate)
+	{
+		try
+		{
+			dueDate = sdf.parse(newDate);
+			noDueDate = "";
 		}
 		catch (ParseException e)
 		{
