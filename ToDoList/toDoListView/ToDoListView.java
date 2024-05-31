@@ -44,6 +44,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -109,15 +110,6 @@ public class ToDoListView extends JFrame
 	}
 	
 	/**
-	 * 
-	 * @return center panel that contains the tasks
-	 */
-	public JPanel getCenterPanel()
-	{
-		return centerPanel;
-	}
-	
-	/**
 	 * Adds the buttons that adds a new task and shows the completed tasks
 	 */
 	public void addBottomSection()
@@ -133,6 +125,15 @@ public class ToDoListView extends JFrame
 		buttonPanel.add(completedButton);
 		buttonPanel.setOpaque(false);
 		mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+	}
+	
+	/**
+	 * 
+	 * @return center panel that contains the tasks
+	 */
+	public JPanel getCenterPanel()
+	{
+		return centerPanel;
 	}
 	
 	public static void main(String[] args)
