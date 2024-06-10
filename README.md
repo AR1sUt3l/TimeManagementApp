@@ -4,10 +4,10 @@
 * [Purpose](#purpose)
 * [Features](#features)
 * [Requirements](#requirements)
-* [CRC Cards](#crccards)
-* [Class Diagram](#classdiagram)
+* [CRC Cards](#crc-cards)
+* [Class Diagram](#class-diagram)
 * [Wireframe](#wireframe)
-* [Requirements Traceability Matrix](#requirementstraceabilitymatrix)
+* [Requirements Traceability Matrix](#requirements-traceability-matrix)
 
 ## Description
 
